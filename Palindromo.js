@@ -1,14 +1,20 @@
-var palabra = String.fromCharCode(80);
-var x,y,z;
-  
-  console.log("\n\nEscribe una palabra: ");
-  //console.log(" %s",palabra);
-  x=String.length(palabra);
-  x=x-1;
-for(y=0,z=x;y<=x/2;y++,z--){
-         if(palabra[y]==palabra[z]){
-         console.log("Es palindromo");
-         }else{
-console.log("No es palindromo");
-        }
+function texto(){
+	var palabra=prompt("Escribe una palabra o número").toLowerCase();
+ 
+	// Aquí elimino los espacios en blanco
+	palabra=palabra.replace(/ /g, "");
+ 
+	for (var i=0;i<palabra.length;i++){
+		if(palabra[i]!=palabra[palabra.length-i-1]){
+			return false;
+		}
+	}
+	return true;
+}
+ 
+if(texto())
+{
+	alert("Esto es palíndromo");
+}else{
+	alert("Esto no es palíndromo")
 }
